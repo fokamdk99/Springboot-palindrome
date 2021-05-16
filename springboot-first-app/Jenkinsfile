@@ -8,10 +8,9 @@ pipeline {
         skipStagesAfterUnstable()
     }
     stages {
-
         stage('Build') {
             steps {
-                sh 'mvn -f springboot-first-app/pom.xml clean package'
+                sh 'docker build -t springboot-first-app-dockerized1 springboot-first-app/'
             }
         }
     }
